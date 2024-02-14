@@ -1,0 +1,23 @@
+{ "triggers":[
+  {
+    "$extends": "buzzerTurnedOn"
+  },
+  {
+    "$extends": "buzzerTurnedOff"
+  },
+  {
+    "$extends": "alarmTurnedOn"
+  },
+  {
+    "$extends": "alarmTurnedOff"
+  }
+  ],
+  "actions": [
+    {
+      "$extends": "turnOnBuzzer"
+    },
+    {
+      "$extends": "turnOffBuzzer"
+    }
+  ]
+}

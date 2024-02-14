@@ -1,0 +1,31 @@
+{
+  "name": "com.qubino",
+  "version": "1.0.0",
+  "description": "This app adds support for the following Qubino devices in Homey:",
+  "main": "app.js",
+  "dependencies": {
+    "ansi-regex": "^6.0.1",
+    "homey-zwavedriver": "^2.1.8"
+  },
+  "scripts": {
+    "run": "homeyConfig compose && athom project --run",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/athombv/com.qubino.git"
+  },
+  "engines": {
+    "node": ">=8.16.0"
+  },
+  "author": "Athom B.V.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/athombv/com.qubino/issues"
+  },
+  "homepage": "https://github.com/athombv/com.qubino#readme",
+  "devDependencies": {
+    "eslint": "^8.0.0",
+    "eslint-config-athom": "^2.1.0"
+  }
+}

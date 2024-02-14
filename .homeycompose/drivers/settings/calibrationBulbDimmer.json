@@ -1,0 +1,38 @@
+{
+    "type": "dropdown",
+    "label": {
+        "en": "Calibration",
+        "nl": "Kalibratie"
+    },
+    "zwave": {
+        "index": 71,
+        "size": 1
+    },
+    "value": "0",
+    "values": [{
+            "id": "0",
+            "label": {
+                "en": "Calibration if module is excluded",
+                "nl": "Kalibratie als module is uitgesloten"
+            }
+        },
+        {
+            "id": "1",
+            "label": {
+                "en": "Calibration after power cycle",
+                "nl": "Kalibratie gedaan na power cycle"
+            }
+        },
+        {
+            "id": "2",
+            "label": {
+                "en": "Force calibration.",
+                "nl": "Kalibratie forceren."
+            }
+        }
+    ],
+    "hint": {
+        "en": "With this parameter ({{zwaveParameterIndex}}) Choose when will the calibration procedure start.\n\nNote: For additional information check ‘MINI DIMMER CALIBRATION’ under chapter 2.",
+        "nl": "Kies met deze parameter ({{zwaveParameterIndex}}) wanneer de kalibratieprocedure begint.\n\nLet op: Voor aanvullende informatie raadpleeg 'MINI DIMMER KALIBRATIE' onder hoofdstuk 2."
+    }
+}

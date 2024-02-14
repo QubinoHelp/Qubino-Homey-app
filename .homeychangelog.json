@@ -1,0 +1,32 @@
+{
+  "3.1.1": {
+    "en": "Added maintenance actions for various devices (e.g. calibration and power measurement reset), fixed an issue with the RGBW Dimmer where color changes would not be correctly updated in the UI, fixed an issue with invalid dropdown values for input settings for the RGBW Dimmer, added a workaround for the Flush Dimmer 0 - 10V temperature reporting issue, improved app descriptions."
+  },
+  "3.1.2": {
+    "en": "Improved stability of adding Qubino devices to Homey."
+  },
+  "3.2.1": {
+    "en": "Added support for LUXY Smart Light (ZMNHQD), improved sensor settings for Flush Dimmer 0 - 10V (ZMNHVD)."
+  },
+  "3.3.1": {
+    "en": "Added support for LUXY Smart Switch (ZMNKAD)."
+  },
+  "4.0.0": {
+    "en": "Updated to latest Homey Apps SDK version."
+  },
+  "4.1.0": {
+    "en": "Added support for 3-phase Smart Meter (ZMNHXD)."
+  },
+  "4.1.2": {
+    "en": "Re added Luxy Light, added  Mini Dimmer Force calibration parameter"
+  },
+  "4.1.3": {
+    "en": "re add luxy light, added Mini Dimmer calibration parameter, fixed parameter 110 min and max values"
+  },
+  "4.1.4": {
+    "en": "fixed parameter 110 values"
+  },
+  "4.1.5": {
+    "en": "fixed parameter 110 to its proper values"
+  }
+}

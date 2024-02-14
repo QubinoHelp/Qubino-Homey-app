@@ -1,0 +1,16 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\.homeycompose",
+    "\\.homeycompose\\drivers",
+    "\\drivers",
+    "\\drivers\\ZMNHBD1",
+    "\\drivers\\ZMNHTD1",
+    "\\drivers\\ZMNHXD1",
+    "\\drivers\\ZMNHYD",
+    "\\drivers\\ZMNKAD",
+    "\\lib"
+  ],
+  "SelectedNode": "\\drivers\\ZMNHBD1\\driver.compose.json",
+  "PreviewInSolutionExplorer": false
+}

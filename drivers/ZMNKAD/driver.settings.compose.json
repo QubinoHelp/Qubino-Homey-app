@@ -1,0 +1,116 @@
+[
+  {
+    "$extends": "autoOff",
+    "zwave": {
+      "index": 11,
+      "size": 2
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) defines the time (>30 seconds) after which the device is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch uitzet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+    }
+  },
+  {
+    "$extends": "autoOn",
+    "zwave": {
+      "index": 10,
+      "size": 2
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) defines the time (>30 seconds) after which the device is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd (>30 seconden) waarna het apparaat zichzelf automatisch aanzet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+    }
+  },
+  {
+    "$extends": ["autoOff", "autoOffQ1"],
+    "zwave": {
+      "index": 13,
+      "size": 2
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) defines the time (>30 seconds) after which output 1 is turned off automatically. Note: setting this parameter to zero will disable automatically turning off.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd (>30 seconden) waarna uitgang 1 automatisch wordt uitgezet. Let op: het instellen van deze parameter op nul schakelt het automatisch uit gaan uit."
+    }
+  },
+  {
+    "$extends": ["autoOn", "autoOnQ1"],
+    "zwave": {
+      "index": 12,
+      "size": 2
+    },
+    "value": 0,
+    "attr": {
+      "min": 0,
+      "max": 32535
+    },
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) defines the time (>30 seconds) after which output 1 is turned on automatically. Note: setting this parameter to zero will disable automatically turning on.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) bepaalt de tijd (>30 seconden) waarna uitgang 1 automatisch wordt aangezet. Let op: het instellen van deze parameter op nul schakelt het automatisch aan gaan uit."
+    }
+  },
+  {
+    "$extends": "restoreStatus"
+  },
+  {
+    "$extends": [ "restoreStatus", "restoreStatusQ1"]
+  },
+  {
+    "id": "turnOffAlarm",
+    "type": "dropdown",
+    "zwave": {
+      "index": 3,
+      "size": 1
+    },
+    "label": {
+      "en": "Turn alarm mode off",
+      "nl": "Alarm status uitschakelen"
+    },
+    "value": "1",
+    "values": [
+      {
+        "id": "0",
+        "label": {
+          "en": "Only by Homey (Z-wave)",
+          "nl": "Enkel door Homey (Z-wave)"
+        }
+      },
+      {
+        "id": "1",
+        "label": {
+          "en": "Capacitive input & Homey (Z-wave)",
+          "nl": "Capacitieve bedieningsknoppen & Homey (Z-wave)"
+        }
+      }
+    ],
+    "hint": {
+      "en": "This parameter ({{zwaveParameterIndex}}) determines how the buzzer can be turned off.",
+      "nl": "Deze parameter ({{zwaveParameterIndex}}) specificeert hoe de buzzer uitgeschakeld kan worden."
+    }
+  },
+  {
+    "$extends": ["relayType", "relayTypeQ1"],
+    "zwave": {
+      "index": 1,
+      "size": 1
+    }
+  },
+  {
+    "$extends": "capacitiveControlRelayOnly"
+  },
+  {
+    "type": "group",
+    "label": {
+      "en": "Power reporting",
+      "nl": "Stroomverbruik"
+    },
+    "children": [
+      {
+        "$extends": "powerReportingThreshold"
+      },
+      {
+        "$extends": "powerReportingInterval"
+      }
+    ]
+  }
+
+]

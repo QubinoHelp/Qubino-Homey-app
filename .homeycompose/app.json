@@ -1,0 +1,46 @@
+{
+  "id": "com.qubino",
+  "name": {
+    "en": "Qubino"
+  },
+  "sdk": 3,
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "version": "4.1.5",
+  "compatibility": ">=5.0.0",
+  "brandColor": "#1784c7",
+  "description": {
+    "en": "Turn any home into a smart home with Qubino",
+    "nl": "Maak van elk huis een slim huis met Qubino"
+  },
+  "category": [
+    "appliances",
+    "lights",
+    "climate"
+  ],
+  "images": {
+    "large": "/assets/images/large.png",
+    "small": "/assets/images/small.png"
+  },
+  "author": {
+    "name": "Athom B.V.",
+    "email": "apps@athom.com"
+  },
+  "contributors": {
+    "developers": [
+      {
+        "name": "Martin Brasse",
+        "email": "kasteleman@gmail.com"
+      },
+      {
+        "name": "Ted Tolboom",
+        "email": "dTNL.Homey@gmail.com"
+      }
+    ]
+  },
+  "support": "https://support.qubino.com",
+  "homepage": "https://qubino.com",
+  "homeyCommunityTopicId": 55354
+}
