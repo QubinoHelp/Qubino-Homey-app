@@ -288,6 +288,96 @@
       },
       {
         "hint": null,
+        "id": "ZMNHBA1_I1_on",
+        "title": {
+          "en": "Input 1 turned on",
+          "nl": "Ingang 1 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBD1"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "ZMNHBA1_I1_off",
+        "title": {
+          "en": "Input 1 turned off",
+          "nl": "Ingang 1 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBD1"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputOneToggled_ZMNHBD1",
+        "title": {
+          "en": "Input 1 was toggled",
+          "nl": "Ingang 1 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBD1"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "ZMNHBA1_I2_on",
+        "title": {
+          "en": "Input 2 turned on",
+          "nl": "Ingang 2 is ingeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBD1"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "ZMNHBA1_I2_off",
+        "title": {
+          "en": "Input 2 turned off",
+          "nl": "Ingang 2 is uitgeschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBD1"
+          }
+        ]
+      },
+      {
+        "hint": null,
+        "id": "inputTwoToggled_ZMNHBD1",
+        "title": {
+          "en": "Input 2 was toggled",
+          "nl": "Ingang 2 is geschakeld"
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBD1"
+          }
+        ]
+      },
+      {
+        "hint": null,
         "id": "ZMNHDA2_I2_on",
         "title": {
           "en": "Input 2 turned on",
@@ -1329,7 +1419,7 @@
     ],
     "actions": [
       {
-        "id": "resetMeter_ZMNHBD1",
+        "id": "resetMeter_ZMNHBD1aa",
         "title": {
           "en": "Reset power meter",
           "nl": "Stel stroomverbuik opnieuw in"
@@ -1350,6 +1440,24 @@
               "driver_id": "ZMNHBD1",
               "flags": "zwaveMultiChannel"
             }
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_MT02761",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=MT02761"
           }
         ]
       },
@@ -1404,6 +1512,24 @@
             "type": "device",
             "name": "device",
             "filter": "driver_id=ZMNHBA2"
+          }
+        ]
+      },
+      {
+        "id": "resetMeter_ZMNHBD1",
+        "title": {
+          "en": "Reset power meter",
+          "nl": "Stel stroomverbuik opnieuw in"
+        },
+        "hint": {
+          "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+          "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+        },
+        "args": [
+          {
+            "type": "device",
+            "name": "device",
+            "filter": "driver_id=ZMNHBD1"
           }
         ]
       },
@@ -1918,6 +2044,457 @@
     ]
   },
   "drivers": [
+    {
+      "id": "MT02761",
+      "name": {
+        "en": "HC Shutter FM"
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "images": {
+        "large": "/drivers/MT02761/assets/images/large.png",
+        "small": "/drivers/MT02761/assets/images/small.png"
+      },
+      "class": "windowcoverings",
+      "capabilities": [
+        "windowcoverings_set",
+        "meter_power",
+        "measure_power",
+        "measure_temperature",
+        "windowcoverings_tilt_set",
+        "button.reset_meter",
+        "button.calibration"
+      ],
+      "capabilitiesOptions": {
+        "button.reset_meter": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Reset power meter",
+            "nl": "Stel stroomverbuik opnieuw in"
+          },
+          "desc": {
+            "en": "Reset the accumulated power usage (kWh), note that this can not be reversed.",
+            "nl": "Stel geaccumuleerde stroomverbruik (kWh) opnieuw in, dit kan niet worden teruggedraaid."
+          }
+        },
+        "button.calibration": {
+          "maintenanceAction": true,
+          "title": {
+            "en": "Start calibration",
+            "nl": "Start kalibratie"
+          },
+          "desc": {
+            "en": "Force calibration of the HC Shutter FM. Make sure the blinds are lowered completely before starting the calibration.",
+            "nl": "Start geforceerde kalibratie van de HC Shutter FM. Zorg dat het rolluik of de jaloezieën volledig naar beneden zijn voor het starten van de kalibratie."
+          }
+        }
+      },
+      "connectivity": [
+        "zwave"
+      ],
+      "zwave": {
+        "manufacturerId": 175,
+        "productTypeId": 3,
+        "productId": 52,
+        "associationGroups": [
+          1
+        ],
+        "includeSecure": false,
+        "learnmode": {
+          "image": "/drivers/MT02761/assets/learnmode.svg",
+          "instruction": {
+            "en": "Enable inclusion mode on the HC Shutter FM via one of the following methods:\n\n1. Connect the device to the power supply and wait 5 seconds for auto-inclusion to start.\n\n2. Toggle the switch connected to input 1 three times within three seconds.\n\n3. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.",
+            "nl": "Activeer inclusie modus op de HC Shutter FM via een van de volgende methoden:\n\n1. Verbind het apparaat met de stroomvoorziening en wacht 5 seconden tot auto-inclusie start.\n\n2. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n3. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt."
+          }
+        },
+        "unlearnmode": {
+          "instruction": {
+            "en": "Enable exclusion mode on the HC Shutter FM via one of the following methods:\n\n1. Toggle the switch connected to input 1 three times within three seconds.\n\n2. If device is powered by 24V SELV supply: press and hold the S (Service) button between 2 and 6 seconds.\n\nNote: holding the S button longer than 6 seconds will reset the device completely.",
+            "nl": "Activeer exclusie modus op de HC Shutter FM via een van de volgende methoden:\n\n1. Schakel de schakelaar verbonden aan input 1 drie keer binnen drie seconden.\n\n2. Als het apparaat is aangesloten op 24V SELV: houd dan 2 tot 6 seconden de S (Service) knop ingedrukt.\n\nLet op: wanneer de S knop langer dan 6 seconden wordt ingehouden wordt het apparaat teruggezet naar fabrieksinstellingen."
+          },
+          "image": "/drivers/MT02761/assets/learnmode.svg"
+        }
+      },
+      "settings": [
+        {
+          "id": "allOn",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn on when 'all on' command is received",
+            "nl": "Gaat aan bij ontvangen 'alles aan' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all on' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles aan' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "id": "allOff",
+          "type": "checkbox",
+          "label": {
+            "en": "Turn off when 'all off' command is received",
+            "nl": "Gaat uit bij ontvangen 'alles uit' commando"
+          },
+          "hint": {
+            "en": "This parameter (10) determines the action of the device in response to receiving a 'all off' command from Homey or another controller.",
+            "nl": "Deze parameter (10) bepaalt de actie van het apparaat bij het ontvangen van een 'alles uit' commando van Homey of een andere controller."
+          },
+          "value": true
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Roller shutter",
+            "nl": "Rolluik"
+          },
+          "children": [
+            {
+              "id": "invertWindowCoveringsDirection",
+              "type": "checkbox",
+              "label": {
+                "en": "Invert shutter movement direction",
+                "nl": "Keer rolluik beweging om"
+              },
+              "value": false,
+              "hint": {
+                "en": "If this setting is enabled, the shutter movement will be inverted.",
+                "nl": "Als deze instelling is geactiveerd wordt de rolluik beweging omgedraait."
+              }
+            },
+            {
+              "id": "motorMovingTime",
+              "type": "number",
+              "label": {
+                "en": "Up/down moving time of motor",
+                "nl": "Omhoog/omlaag bewegingstijd van motor"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 74,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": 0,
+                "max": 3276
+              },
+              "hint": {
+                "en": "This parameter (74) determines the time needed to completely open or close the shutters. Note: it is important that the reference position used for determining the moving time of the motor is when the shutter is at its lowest position. Check the device manual for detailed calibration instructions.",
+                "nl": "Deze parameter (74) bepaalt de tijd die nodig is voor het volledig openen of sluiten van de jalozieën. Let op: het is belangrijk dat de jaloezieën zich op hun laagste punt bevinden bij het bepalen van de motor bewegingstijd. Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
+              }
+            },
+            {
+              "value": 30,
+              "attr": {
+                "min": 0,
+                "max": 127
+              },
+              "id": "motorOperationDetection",
+              "type": "number",
+              "label": {
+                "en": "Limit switch power consumption threshold",
+                "nl": "Limiet stroomverbruik drempelwaarde"
+              },
+              "units": {
+                "en": "W",
+                "nl": "W"
+              },
+              "zwave": {
+                "index": 76,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (76) determines the threshold value in Watts after which the device detects that it can not move any higher or lower.",
+                "nl": "Deze parameter (76) bepaalt de drempelwaarde in Watts waarna het apparaat detecteert dat er niet verder omhoog of omlaag bewogen kan worden."
+              }
+            },
+            {
+              "id": "delayBetweenMotorMovement",
+              "type": "number",
+              "label": {
+                "en": "Delay between motor movement",
+                "nl": "Vertraging tussen motor bewegingen"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 90,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0.1,
+                "max": 3,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (90) determines the minimum time delay between successive motor movements.",
+                "nl": "Deze parameter (90) bepaalt de minimale vertraging tussen opeenvolgende motor bewegingen."
+              }
+            },
+            {
+              "id": "motorOffDelayLimitSwitch",
+              "type": "number",
+              "label": {
+                "en": "Delay after reaching limit switch",
+                "nl": "Vertraging na bereiken limiet"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 86,
+                "size": 1
+              },
+              "value": 0.8,
+              "attr": {
+                "min": 0.3,
+                "max": 5
+              },
+              "hint": {
+                "en": "This parameter (86) determines the delay (in seconds), after the power consumption has dropped below the value specified in parameter 76, before the motor is turned off.",
+                "nl": "Deze parameter (86) bepaalt de vertraging (in seconden), nadat het stroomverbruik is afgenomen tot onder de in parameter 76 ingestelde drempelwaarde, voordat de motor wordt uitgeschakelt."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Slats",
+            "nl": "Lamellen"
+          },
+          "children": [
+            {
+              "id": "operatingMode",
+              "type": "checkbox",
+              "label": {
+                "en": "Enable venetian blind mode",
+                "nl": "Schakel besturing van lamellen in"
+              },
+              "zwave": {
+                "index": 71,
+                "size": 1
+              },
+              "value": false,
+              "hint": {
+                "en": "This parameter (71) enables venetian blind mode. Note: after changing this setting the device needs to be removed from Homey and re-added after waiting for 30 seconds (do not reset the device when removing). Check the device manual for more detailed instructions.",
+                "nl": "Deze parameter (71) schakelt besturing van lamellen in. Let op: na het wijzigen van deze parameter moet het apparaat worden verwijderd van Homey, vervolgens, na 30 seconden te hebben gewacht, kan het weer worden toegevoegd aan Homey (zet het apparaat niet terug naar fabrieksinstellingen tijdens het verwijderen). Bekijk de handleiding van het apparaat voor gedetailleerde instructies."
+              }
+            },
+            {
+              "id": "invertWindowCoveringsTiltDirection",
+              "type": "checkbox",
+              "label": {
+                "en": "Invert slats tilt direction",
+                "nl": "Draai lamelrichting om"
+              },
+              "value": false,
+              "hint": {
+                "en": "If this setting is enabled, the slats tilt movement will be inverted.",
+                "nl": "Als deze instelling is geactiveerd wordt de draairichting van de lamellen omgedraait."
+              }
+            },
+            {
+              "id": "slatsTiltingTime",
+              "type": "number",
+              "label": {
+                "en": "Slats full turn tilting time",
+                "nl": "Kantel tijd van de lamellen"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 72,
+                "size": 2
+              },
+              "value": 1.5,
+              "attr": {
+                "min": 0,
+                "max": 327
+              },
+              "hint": {
+                "en": "This parameter (72) determines the time (in seconds) needed to complete full turn tilting. Note: if the set time is too long the shutters will start moving up or down for the remaining time.",
+                "nl": "Deze parameter (72) bepaalt de tijd (in seconden) die nodig is voor het volledig kantelen van de lamellen. Let op: als de ingestelde tijd te lang is dan zal de jaloezie omhoog of omlaag bewegen gedurende de resterende tijd."
+              }
+            },
+            {
+              "id": "slatsPosition",
+              "type": "checkbox",
+              "label": {
+                "en": "Restore slat position after control through switches",
+                "nl": "Herstel lamel positie na bediening via schakelaars"
+              },
+              "zwave": {
+                "index": 73,
+                "size": 1
+              },
+              "value": true,
+              "hint": {
+                "en": "This parameter (73) determines whether the slat position should be restored to the last know position after the shutters are controlled through the connected switches or push buttons (or when the lower limit switch is triggered). Note: the slat position is always restored to the last know position after being controller via Homey.",
+                "nl": "Deze parameter (73) bepaalt of de positie van de lamellen moet worden hersteld naar de laatst bekende positie nadat de jaloezie is bediend via de aangesloten schakelaars (of wanneer de lagere limiet switch is bereikt). Let op: de positie van de lamellen wordt altijd hersteld naar de laatst bekende positie na het bedienen via Homey."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Power reporting",
+            "nl": "Stroomverbruik"
+          },
+          "children": [
+            {
+              "id": "powerReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Power report on power change",
+                "nl": "Stroomverbruik update bij verandering van"
+              },
+              "units": {
+                "en": "%",
+                "nl": "%"
+              },
+              "zwave": {
+                "index": 40,
+                "size": 1
+              },
+              "value": 10,
+              "attr": {
+                "min": 0,
+                "max": 100
+              },
+              "hint": {
+                "en": "This parameter (40) defines the relative threshold (percentage) which when exceeded will result in a Watt power consumption report being send to Homey. Note: power consumption needs to change by at least 1 Watt before it can be reported.",
+                "nl": "Deze parameter (40) bepaalt de relatieve verandering (in procenten) die overschreden moet worden voordat een Watt stroom consumptie report wordt verstuurd naar Homey. Let op: stroom consumptie report kan pas worden verstuurd nadat de waarde met minimaal 1 Watt is veranderd."
+              }
+            },
+            {
+              "value": 300,
+              "id": "powerReportingInterval",
+              "type": "number",
+              "label": {
+                "en": "Power reporting interval",
+                "nl": "Stroomverbruik report interval"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 42,
+                "size": 2
+              },
+              "attr": {
+                "min": 0,
+                "max": 32535
+              },
+              "hint": {
+                "en": "This parameter (42) defines the interval in seconds with which the power consumption in Watts is reported to Homey. Note: setting this parameter to zero disables reporting based on intervals completely.",
+                "nl": "Deze parameter (42) bepaalt op welk interval (in seconden) een stroomverbruik update moet worden verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt reports per tijdsinterval volledig uit."
+              }
+            },
+            {
+              "value": 0.8,
+              "attr": {
+                "min": 0.3,
+                "max": 5
+              },
+              "id": "powerReportDelayTime",
+              "type": "number",
+              "label": {
+                "en": "Power consumption report max delay",
+                "nl": "Stroomverbruik report max vertraging"
+              },
+              "units": {
+                "en": "s",
+                "nl": "s"
+              },
+              "zwave": {
+                "index": 85,
+                "size": 1
+              },
+              "hint": {
+                "en": "This parameter (85) determines the maximum delay (in seconds) of a power consumption report after the motor has moved.",
+                "nl": "Deze parameter (85) bepaalt de maximale vertraging (in seconden) van een stroomverbruik report nadat the motor heeft bewogen."
+              }
+            }
+          ]
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Temperature reporting",
+            "nl": "Temperatuur metingen"
+          },
+          "children": [
+            {
+              "id": "temperatureSensorOffset",
+              "type": "number",
+              "label": {
+                "en": "Temperature sensor calibration",
+                "nl": "Temperatuur sensor kalibratie"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 110,
+                "size": 2
+              },
+              "value": 0,
+              "attr": {
+                "min": -100,
+                "max": 100,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (110) determines the value (°C) that will be added to the measured temperature value for the sake of calibration.",
+                "nl": "Deze parameter (110) bepaalt de waarde (°C) die bij de gemeten temperatuur waarde wordt opgeteld om hem te kalibreren."
+              }
+            },
+            {
+              "id": "temperatureSensorReportingThreshold",
+              "type": "number",
+              "label": {
+                "en": "Temperature report threshold",
+                "nl": "Temperatuur report drempelwaarde"
+              },
+              "units": {
+                "en": "°C",
+                "nl": "°C"
+              },
+              "zwave": {
+                "index": 120,
+                "size": 1
+              },
+              "value": 0.5,
+              "attr": {
+                "min": 0,
+                "max": 12.7,
+                "step": 0.1
+              },
+              "hint": {
+                "en": "This parameter (120) defines the threshold (°C) which when exceeded will result in a temperature report being send to Homey. Note: setting this parameter to zero disables temperature reports completely.",
+                "nl": "Deze parameter (120) bepaalt de verandering (°C) die overschreden moet worden voordat een temperatuur report wordt verstuurd naar Homey. Let op: het instellen van deze parameter op nul schakelt temperatuur reports volledig uit."
+              }
+            }
+          ]
+        }
+      ]
+    },
     {
       "name": {
         "en": "Flush 1 Relay (ZMNHAA)"
@@ -3909,10 +4486,10 @@
               }
             },
             {
-              "value": 0.6,
+              "value": 30,
               "attr": {
                 "min": 0,
-                "max": 10
+                "max": 127
               },
               "id": "motorOperationDetection",
               "type": "number",
