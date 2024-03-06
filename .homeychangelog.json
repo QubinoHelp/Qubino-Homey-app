@@ -28,5 +28,8 @@
   },
   "4.1.5": {
     "en": "fixed parameter 110 to its proper values"
+  },
+  "4.1.6": {
+    "en": "added HC Shutter FM (MT 02761) "
   }
 }
